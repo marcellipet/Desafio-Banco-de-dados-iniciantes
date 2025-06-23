@@ -25,3 +25,11 @@ insert into PrProdutos(NomeProduto, PrecoProdutoVenda, PrecoProdutoCusto)
 
 insert into PrProdutos(NomeProduto, PrecoProdutoVenda, PrecoProdutoCusto)
 	values('Cartas para Jogos', 400.00, 200.00 );
+
+select NomeProduto, PrecoProdutoVenda
+	from PrProdutos
+	order by PrecoProdutoVenda desc
+	offset 0 rows fetch next 5 rows only;
+
+delete from PrProdutos
+	where PrecoProdutoVenda < PrecoProdutoCusto;
